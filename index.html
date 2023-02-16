@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VISA VALIDATION</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div id="front_card">
+          <div id="logo">
+            <div id="circle"></div>
+            <div id="border"></div>
+            <div id="img_bank">
+              <img src="./images/icons8-merchant-account-50.png" alt="" />
+            </div>
+          </div>
+          <div id="card_info">
+            <h1 id="visa_card_number">1234 5678 9123 0000</h1>
+            <div id="info">
+              <span id="visa_card_name">yossef ibrahim</span>
+              <span id="visa_card_date">09\15</span>
+            </div>
+          </div>
+        </div>
+        <div id="back_card">
+          <span id="visa_cvc_card">123</span>
+        </div>
+      </section>
+      <section>
+        <article id="article">
+          <div id="completed">
+            <div>
+              <svg
+                width="80"
+                height="80"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="40" cy="40" r="40" fill="url(#a)" />
+                <path
+                  d="M28 39.92 36.08 48l16-16"
+                  stroke="#fff"
+                  stroke-width="3"
+                />
+                <defs>
+                  <linearGradient
+                    id="a"
+                    x1="-23.014"
+                    y1="11.507"
+                    x2="0"
+                    y2="91.507"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#6348FE" />
+                    <stop offset="1" stop-color="#610595" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <h1>THANK YOU !</h1>
+            <p>we've added your card</p>
+            <button class="btn_reload">continue</button>
+          </div>
+          <form action="">
+            <label class="label" for="">CARDHOLDER NAME</label>
+            <input
+              required
+              class="input_style"
+              type="text"
+              placeholder="e.g. yossef ibrahim"
+              name="name"
+              id="card_name"
+              onkeyup=" name_onkey();"
+            />
+
+            <label class="label" for="">CARD NUMBER</label>
+            <input
+              required
+              maxlength="19"
+              oninput="num()"
+              type="text"
+              name="number"
+              id="card_number"
+              value=""
+              onkeyup="card_number_format('card_number');"
+              class="input_style"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+
+            <div id="cvc_date">
+              <div id="date_div">
+                <label class="label" for="">Exp. Date (MM/YY)</label>
+                <div>
+                  <input
+                    oninput="mon()"
+                    maxlength="2"
+                    class="date_style input_style"
+                    type="text"
+                    placeholder="MM"
+                    name="month"
+                    id="date_m"
+                    required
+                  />
+                  <input
+                    oninput="yea()"
+                    maxlength="2"
+                    class="date_style input_style"
+                    type="text"
+                    placeholder="YY"
+                    name="year"
+                    id="date_y"
+                    required
+                  />
+                </div>
+              </div>
+              <div id="cvc_div">
+                <label class="label" for="">CVC</label>
+                <div>
+                  <input
+                    required
+                    oninput="CvC()"
+                    maxlength="3"
+                    class="cvc_style input_style"
+                    type="text"
+                    placeholder="e.g. 123"
+                    name="cvc"
+                    id="cvc"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <input id="btn" type="submit" value="Confirm" />
+          </form>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
